@@ -28,17 +28,19 @@ fn main() {
         let bytes: usize = reader.read_line(&mut line).unwrap();
 
         if bytes > 0 {
-            if om_grrs::find_matches(&line, &args.pattern) {
-                // info!(
-                //     "I found the pattern {:?} on line {:?} in the line {:?}",
-                //     &args.pattern, line_number, &line
-                // );
+            // if om_grrs::find_matches(&line, &args.pattern) {
+            //     info!(
+            //         "I found the pattern {:?} on line {:?}",
+            //         &args.pattern, line_number
+            //     );
+            // }
+            let found = line.contains(&args.pattern);
+            // println!("{:?}", found);
+            if found {
                 info!(
                     "I found the pattern {:?} on line {:?}",
                     &args.pattern, line_number
                 );
-            } else {
-                print!(".");
             }
 
             line_number += 1;

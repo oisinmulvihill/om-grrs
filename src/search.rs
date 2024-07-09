@@ -12,6 +12,7 @@ fn test_find_matches_use_cases() {
     env_logger::init();
 
     assert_eq!(find_matches("hello there, how are you?", "hello"), true);
+    assert_eq!(find_matches("hello there, how are you?", "Hello"), true);
     assert_eq!(
         find_matches("hello there, how are you?", "how are you"),
         true
