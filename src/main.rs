@@ -2,7 +2,7 @@ extern crate clap;
 extern crate log;
 
 use clap::Parser;
-use log::{debug, info};
+use log::debug;
 use std::io::{BufRead, BufReader};
 
 #[derive(Parser)]
